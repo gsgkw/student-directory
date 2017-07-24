@@ -7,12 +7,14 @@ def input_students
   name = gets.chomp
   # while the name is not empty, repeat this code
   while !name.empty? do
+puts 'cohort?'
+cohort = gets.chomp
 puts "what are #{name}'s hobbies?"
 hobbies = gets.chomp
 puts "what is #{name}'s nationality?"
 nationality = gets.chomp
-    students << {name: name, cohort: :november, hobbies: hobbies, nationality: nationality}
-    puts "Now we have #{students.count} students"
+    students << {name: name, cohort: cohort.to_sym ||= :november, hobbies: hobbies, nationality: nationality}
+    puts "Now we have #{students.count} #{students.count==1 ? "student" : "students"}"
     # get another name from the user
     name = gets.chomp
   end
@@ -33,7 +35,7 @@ end
 end
 
 def print_footer(students)
-  puts "Overall, we have #{students.size} great students".center(30)
+  puts "Overall, we have #{students.size} great #{students.count==1 ? "student" : "students"}".center(30)
 end
 #nothing happens until we call the methods
 students = input_students
