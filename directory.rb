@@ -7,7 +7,11 @@ def input_students
   name = gets.chomp
   # while the name is not empty, repeat this code
   while !name.empty? do
-    students << {name: name, cohort: :november}
+puts "what are #{name}'s hobbies?"
+hobbies = gets.chomp
+puts "what is #{name}'s nationality?"
+nationality = gets.chomp
+    students << {name: name, cohort: :november, hobbies: hobbies, nationality: nationality}
     puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp
@@ -23,7 +27,7 @@ end
 def print(students)
 i = 0
   while i < students.count
-puts "#{i+1}. #{students[i][:name]} (#{students[i][:cohort]} cohort)"
+puts "#{i+1}. #{students[i][:name]} (#{students[i][:cohort]} cohort, from #{students[i][:nationality]} and likes #{students[i][:hobbies]} )"
 i +=1
 end
 end
