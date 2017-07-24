@@ -1,6 +1,6 @@
 def input_students
   puts "Please enter the names of the students"
-  puts "To finish, just hit return twice"
+  puts "To finish, just keep hitting return"
   # create empty array
   students = []
   # get the first name
@@ -20,20 +20,20 @@ students
 end
 
 def print_header
-puts "The Students of Villains Academy"
-puts "-------------"
+puts "The Students of Villains Academy".center(30)
+puts "-------------".center(30)
 end
 
 def print(students)
 i = 0
   while i < students.count
-puts "#{i+1}. #{students[i][:name]} (#{students[i][:cohort]} cohort, from #{students[i][:nationality]} and likes #{students[i][:hobbies]} )"
+puts "#{i+1}. #{students[i][:name]} (#{students[i][:cohort]} cohort, from #{students[i][:nationality]} and likes #{students[i][:hobbies]} )".center(30)
 i +=1
 end
 end
 
 def print_footer(students)
-  puts "Overall, we have #{students.size} great students"
+  puts "Overall, we have #{students.size} great students".center(30)
 end
 #nothing happens until we call the methods
 students = input_students
